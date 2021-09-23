@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.nuvito.spring.test</groupId>
-    <artifactId>test-database-autoconfigure</artifactId>
+    <artifactId>sqlite-test-database-autoconfigure</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Test Database Autoconfigure</name>
     <description>Custom Auto-Configuration for SQLite test databases, which are not supported by spring so far</description>
