@@ -1,0 +1,1 @@
+org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase=org.nuvito.spring.test.autoconfigure.jdbc.SqliteTestDatabaseAutoConfiguration
