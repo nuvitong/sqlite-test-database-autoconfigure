@@ -1,7 +1,7 @@
 package org.nuvito.spring.test.autoconfigure.jdbc;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
@@ -21,7 +21,7 @@ import javax.sql.DataSource;
  */
 @Order(2147483646)
 class EmbeddedSqliteDataSourceBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
-    private static final Log logger = LogFactory.getLog(EmbeddedSqliteDataSourceBeanFactoryPostProcessor.class);
+    private static final Logger logger = LoggerFactory.getLogger(EmbeddedSqliteDataSourceBeanFactoryPostProcessor.class);
     private static final String SQLITE_EMBEDDED_URL = "jdbc:sqlite::memory:";
     private static final String SQLITE_DRIVER_CLASS = "org.sqlite.JDBC";
 
@@ -83,6 +83,7 @@ class EmbeddedSqliteDataSourceBeanFactoryPostProcessor implements BeanFactoryPos
 
     private void registerNewEmbeddedDataSourceBean(BeanDefinitionRegistry registry) {
         logger.info("Creating 'testDataSource' DataSource bean with embedded sqlite version.");
+        logger.trace("da bin ich trace");
         registry.registerBeanDefinition("testDataSource", this.createEmbeddedBeanDefinition(false));
     }
 
